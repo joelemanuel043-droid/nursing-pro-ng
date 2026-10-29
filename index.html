@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b3b60">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>Nursing Pro NG</title>
+<style>
+:root{--navy:#0b3b60;--blue:#176b87;--teal:#16a6a1;--pale:#eef8fa;--ink:#173246;--muted:#607887;--white:#fff;--line:#dce9ee}
+*{box-sizing:border-box}body{margin:0;background:#f4f8fa;color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+header{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:24px 18px 22px;border-radius:0 0 24px 24px}
+.brand{font-weight:800;font-size:22px;letter-spacing:.2px}.tag{opacity:.88;font-size:13px;margin-top:3px}.welcome{font-size:24px;font-weight:750;margin:24px 0 6px}.sub{font-size:14px;opacity:.9}
+.search{display:flex;gap:8px;margin-top:18px}.search input{min-width:0;flex:1;padding:13px 14px;border:0;border-radius:12px;font-size:15px}.search button{border:0;background:var(--teal);color:#fff;padding:0 15px;border-radius:12px;font-weight:700}
+main{padding:18px 15px 94px;max-width:760px;margin:auto}.section-title{font-size:18px;font-weight:800;margin:18px 2px 12px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px;box-shadow:0 3px 12px #0b3b6008}.icon{font-size:25px}.card h3{font-size:15px;margin:8px 0 5px}.card p{font-size:12px;line-height:1.45;color:var(--muted);margin:0}.wide{grid-column:1/-1}.pill{display:inline-block;background:#e6f7f6;color:#087e7a;padding:5px 9px;border-radius:99px;font-size:11px;font-weight:800;margin-top:10px}
+.quick{display:flex;gap:9px;overflow:auto;padding:2px 0 8px}.quick button{white-space:nowrap;background:#fff;border:1px solid var(--line);padding:10px 13px;border-radius:12px;color:var(--navy);font-weight:700}
+.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:17px;margin-top:12px}.panel h2{margin:0 0 9px;font-size:19px}.panel p,.panel li{font-size:14px;line-height:1.6}.panel input,.panel textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:6px 0}.btn{border:0;background:var(--navy);color:#fff;padding:12px 15px;border-radius:11px;font-weight:750;cursor:pointer}.btn.secondary{background:#e5f4f6;color:var(--navy)}.muted{color:var(--muted);font-size:12px}.answer{display:block;width:100%;text-align:left;background:#f8fbfc;border:1px solid var(--line);border-radius:11px;padding:12px;margin:8px 0;color:var(--ink);font:inherit}.answer:active{background:#e6f7f6}.bottom{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:9px 4px calc(9px + env(safe-area-inset-bottom));z-index:5}.bottom button{border:0;background:transparent;color:var(--muted);font-size:11px;font-weight:700;padding:4px}.bottom button span{display:block;font-size:20px;margin-bottom:2px}.bottom button.active{color:var(--teal)}.hidden{display:none!important}.notice{background:#fff8e8;border:1px solid #f1dfb2;border-radius:12px;padding:12px;font-size:12px;line-height:1.5;color:#70551a;margin-top:12px}
+@media(min-width:560px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.wide{grid-column:span 2}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">🩺 Nursing Pro NG</div>
+  <div class="tag">Your Knowledge. Your Skills. Your Nursing Future.</div>
+  <div class="welcome">Learn something that matters.</div>
+  <div class="sub">Nursing and healthcare learning for everyone.</div>
+  <form class="search" id="searchForm"><input id="searchInput" placeholder="Search a topic, e.g. vital signs" aria-label="Search topics"><button>Search</button></form>
+</header>
+<main>
+<section id="homeView">
+  <div class="section-title">Explore Nursing Pro NG</div>
+  <div class="grid">
+    <article class="card" data-open="learn"><div class="icon">📚</div><h3>Nursing Academy</h3><p>Explore core subjects and study guides.</p><span class="pill">LEARN</span></article>
+    <article class="card" data-open="drugs"><div class="icon">💊</div><h3>Drug Guide</h3><p>Study medicine information and safety.</p><span class="pill">STUDY</span></article>
+    <article class="card" data-open="clinical"><div class="icon">🏥</div><h3>Clinical Hub</h3><p>Review clinical skills and procedures.</p><span class="pill">PRACTISE</span></article>
+    <article class="card" data-open="cbt"><div class="icon">📝</div><h3>CBT Practice</h3><p>Test your knowledge with sample questions.</p><span class="pill">QUIZ</span></article>
+    <article class="card" data-open="tutor"><div class="icon">🤖</div><h3>AI Nursing Tutor</h3><p>Get help understanding difficult topics.</p><span class="pill">ASK</span></article>
+    <article class="card" data-open="library"><div class="icon">📄</div><h3>Study Library</h3><p>Browse notes and plan future PDF resources.</p><span class="pill">RESOURCES</span></article>
+  </div>
+  <div class="section-title">Quick topics</div>
+  <div class="quick"><button data-topic="Vital signs">Vital signs</button><button data-topic="Medication safety">Medication safety</button><button data-topic="Infection prevention">Infection prevention</button><button data-topic="Pediatric assessment">Pediatric assessment</button></div>
+  <div class="panel"><h2>🌱 Today's learning reminder</h2><p>Good nursing combines knowledge, careful observation, communication, compassion, and patient safety. Study one topic at a time and practise within your level of training.</p></div>
+  <div class="notice"><strong>Educational use:</strong> This starter app is for learning, not for diagnosing or treating patients. Always follow current local protocols and the instructions of a qualified clinical supervisor.</div>
+</section>
+<section id="learnView" class="hidden">
+  <div class="section-title">📚 Nursing Academy</div>
+  <div class="grid" id="subjectGrid"></div>
+  <div class="panel" id="subjectDetail"><h2>Choose a subject</h2><p>Tap a subject to see a short overview.</p></div>
+</section>
+<section id="drugsView" class="hidden">
+  <div class="section-title">💊 Drug Guide</div>
+  <div class="panel"><h2>Learn medicines safely</h2><p>Study a medicine by checking its generic name, class, indication, contraindications, adverse effects, interactions, monitoring needs, and patient education.</p><label for="drugSearch"><strong>Find a medicine topic</strong></label><input id="drugSearch" placeholder="e.g. albendazole, paracetamol"><button class="btn" id="drugBtn">Show study checklist</button><div id="drugResult"></div></div>
+  <div class="notice">This prototype does not provide patient-specific prescribing or dosing. Confirm medicines and doses using an approved formulary, prescription, and clinical supervisor.</div>
+</section>
+<section id="clinicalView" class="hidden">
+  <div class="section-title">🏥 Clinical Hub</div>
+  <div class="panel"><h2>Clinical learning checklist</h2><ul><li>Hand hygiene and appropriate PPE.</li><li>Confirm patient identity and explain care respectfully.</li><li>Assess and record vital signs accurately.</li><li>Maintain privacy, dignity, and infection prevention.</li><li>Document observations and promptly report deterioration.</li><li>Perform procedures only after training, authorization, and supervision.</li></ul></div>
+  <div class="panel"><h2>Clinical posting reflection</h2><p>Use these prompts after a supervised learning activity:</p><textarea id="reflection" rows="4" placeholder="What did I learn? What went well? What should I ask my supervisor?"></textarea><button class="btn" id="saveReflection">Save on this device</button><p class="muted" id="reflectionStatus">Saved locally in this browser only.</p></div>
+</section>
+<section id="cbtView" class="hidden">
+  <div class="section-title">📝 CBT Practice</div>
+  <div class="panel" id="quizPanel"><div class="muted" id="quizCount"></div><h2 id="question"></h2><div id="answers"></div><p id="feedback" aria-live="polite"></p><button class="btn" id="nextQuestion">Next question</button></div>
+  <div class="panel"><strong>Practice score:</strong> <span id="score">0</span></div>
+</section>
+<section id="tutorView" class="hidden">
+  <div class="section-title">🤖 AI Nursing Tutor</div>
+  <div class="panel"><h2>Ask your nursing question</h2><p>This first prototype gives a simple local response. A real AI tutor will need an AI service connection, which we can add in a later step.</p><textarea id="tutorQuestion" rows="3" placeholder="e.g. Explain the five rights of medication administration"></textarea><button class="btn" id="askTutor">Explain topic</button><div id="tutorAnswer"></div></div>
+</section>
+<section id="libraryView" class="hidden">
+  <div class="section-title">📄 Study Library</div>
+  <div class="panel"><h2>Study resources</h2><p>The library will hold reviewed notes, quizzes, and downloadable PDFs as we add content.</p><ul><li>Fundamentals of Nursing — planned</li><li>Anatomy and Physiology — planned</li><li>Pharmacology — planned</li><li>Medical-Surgical Nursing — planned</li><li>Maternal and Child Health — planned</li><li>Community Health Nursing — planned</li></ul><p class="muted">No PDFs are bundled in this starter version.</p></div>
+</section>
+<section id="searchView" class="hidden">
+  <div class="section-title">Search results</div><div id="searchResults" class="panel"></div>
+</section>
+</main>
+<nav class="bottom" aria-label="Main navigation">
+<button class="active" data-view="home"><span>🏠</span>Home</button><button data-view="learn"><span>📚</span>Learn</button><button data-view="drugs"><span>💊</span>Drugs</button><button data-view="cbt"><span>📝</span>CBT</button><button data-view="tutor"><span>🤖</span>Tutor</button>
+</nav>
+<script>
+const views=['home','learn','drugs','clinical','cbt','tutor','library','search'];
+function showView(name){views.forEach(v=>{const el=document.getElementById(v+'View');if(el)el.classList.toggle('hidden',v!==name)});document.querySelectorAll('.bottom button').forEach(b=>b.classList.toggle('active',b.dataset.view===name));window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('[data-open]').forEach(el=>el.addEventListener('click',()=>showView(el.dataset.open)));
+document.querySelectorAll('.bottom button').forEach(el=>el.addEventListener('click',()=>showView(el.dataset.view)));
+const subjects=[
+['Anatomy & Physiology','Body structures, organ systems, and how they work.'],
+['Fundamentals of Nursing','Core nursing principles, communication, hygiene, and patient safety.'],
+['Pharmacology','Drug classes, effects, medication safety, and nursing responsibilities.'],
+['Medical-Surgical Nursing','Learning about adult health conditions and nursing care principles.'],
+['Maternal & Child Health','Pregnancy, newborn care, child health, and family-centred care.'],
+['Community Health','Prevention, health promotion, and population health.'],
+['Psychology','Behaviour, development, emotions, and therapeutic communication.'],
+['Nutrition','Nutrients, hydration, balanced diets, and nutrition in health.'],
+['Emergency Nursing','Recognition of urgent deterioration and supervised emergency-care principles.']
+];
+const sg=document.getElementById('subjectGrid');
+subjects.forEach(([name,desc])=>{let a=document.createElement('article');a.className='card';a.innerHTML='<div class="icon">📘</div><h3></h3><p></p>';a.querySelector('h3').textContent=name;a.querySelector('p').textContent=desc;a.addEventListener('click',()=>{document.getElementById('subjectDetail').innerHTML='';let h=document.createElement('h2');h.textContent=name;let p=document.createElement('p');p.textContent=desc+' Select a focused topic and use a recommended textbook or approved school material to study in depth.';document.getElementById('subjectDetail').append(h,p)});sg.appendChild(a)});
+document.getElementById('drugBtn').addEventListener('click',()=>{let q=document.getElementById('drugSearch').value.trim();document.getElementById('drugResult').innerHTML='';let h=document.createElement('h3');h.textContent=q?('Study checklist: '+q):'Medicine study checklist';let p=document.createElement('p');p.textContent='Check: generic name; drug class; approved uses; contraindications; common and serious adverse effects; interactions; required monitoring; patient education; and local guideline. Verify all clinical details with an approved source.';document.getElementById('drugResult').append(h,p)});
+const quiz=[
+{q:'Which action is most important before and after patient contact?',a:['Hand hygiene','Writing a report first','Opening the window','Checking the clock'],c:0,e:'Hand hygiene is a key infection-prevention measure. Follow the appropriate hand hygiene moments and local policy.'},
+{q:'Which is an example of objective data?',a:['“I feel dizzy”','A patient says they are worried','Temperature measured at 38.2°C','“My pain is severe”'],c:2,e:'A measured temperature is objective data. Symptoms reported by a patient are subjective data.'},
+{q:'What should a student do if unsure about a medication dose?',a:['Guess from memory','Ask a qualified supervisor and verify an approved reference','Use another patient’s dose','Give half the dose'],c:1,e:'Never guess a dose. Pause, verify the order and reference, and consult the supervising clinician.'},
+{q:'Which practice helps protect patient confidentiality?',a:['Discussing cases in public','Sharing records with friends','Accessing only records needed for care','Posting patient details online'],c:2,e:'Access only information needed for your authorized role and follow confidentiality rules.'}
+];
+let qi=0,score=0,answered=false;
+function renderQuiz(){answered=false;let item=quiz[qi];document.getElementById('quizCount').textContent='Question '+(qi+1)+' of '+quiz.length;document.getElementById('question').textContent=item.q;document.getElementById('answers').innerHTML='';document.getElementById('feedback').textContent='';item.a.forEach((ans,i)=>{let b=document.createElement('button');b.className='answer';b.textContent=String.fromCharCode(65+i)+'. '+ans;b.onclick=()=>{if(answered)return;answered=true;if(i===item.c)score++;document.getElementById('score').textContent=score+' / '+(qi+1);document.getElementById('feedback').textContent=(i===item.c?'Correct. ':'Not quite. ')+item.e;Array.from(document.getElementById('answers').children).forEach((x,j)=>{if(j===item.c)x.style.borderColor='#16a6a1'});};document.getElementById('answers').appendChild(b)});document.getElementById('nextQuestion').textContent=qi===quiz.length-1?'Restart quiz':'Next question'}
+document.getElementById('nextQuestion').onclick=()=>{if(qi===quiz.length-1){qi=0;score=0;document.getElementById('score').textContent='0';}else qi++;renderQuiz()};renderQuiz();
+document.getElementById('askTutor').onclick=()=>{let q=document.getElementById('tutorQuestion').value.trim();let out=document.getElementById('tutorAnswer');out.innerHTML='';let h=document.createElement('h3');h.textContent='Learning guidance';let p=document.createElement('p');p.textContent=q?'Your question: “'+q+'”. In the next version, the AI tutor will generate a tailored explanation. For now, break the topic into: definition, purpose, key principles, nursing responsibilities, safety precautions, and a short practice question.':'Please type a question first.';out.append(h,p)};
+document.getElementById('searchForm').addEventListener('submit',e=>{e.preventDefault();let q=document.getElementById('searchInput').value.trim().toLowerCase();let matches=subjects.filter(s=>(s[0]+' '+s[1]).toLowerCase().includes(q));const box=document.getElementById('searchResults');box.innerHTML='';let h=document.createElement('h2');h.textContent=q?'Results for “'+q+'”':'Search Nursing Pro NG';box.append(h);if(!q){let p=document.createElement('p');p.textContent='Enter a topic in the search box.';box.append(p)}else if(matches.length){matches.forEach(s=>{let p=document.createElement('p');p.textContent=s[0]+' — '+s[1];box.append(p)})}else{let p=document.createElement('p');p.textContent='No exact match in this starter version. Try “pharmacology”, “nutrition”, “anatomy”, or “emergency”.';box.append(p)}showView('search')});
+document.querySelectorAll('[data-topic]').forEach(b=>b.onclick=()=>{document.getElementById('searchInput').value=b.dataset.topic;document.getElementById('searchForm').requestSubmit()});
+document.getElementById('saveReflection').onclick=()=>{localStorage.setItem('nursingProReflection',document.getElementById('reflection').value);document.getElementById('reflectionStatus').textContent='Reflection saved on this device.'};
+document.getElementById('reflection').value=localStorage.getItem('nursingProReflection')||'';
+</script>
+<script>if ("serviceWorker" in navigator && location.protocol.startsWith("http")) { window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js").catch(() => {})); }</script>
+</body>
+</html>
